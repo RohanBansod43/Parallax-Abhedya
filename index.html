@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moonlight parallax</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header id="header">
+        <!-- <a href="#" class="logo">LOGO</a>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul> -->
+    </header>
+    <section id="parallax">
+        <img src="stars.png" alt="*" id="stars">
+        <img src="moon.png" alt="*" id="moon">
+        <img src="mountains_behind.png" alt="*" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front.png" alt="*" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint nihil temporibus porro natus? Quaerat
+            obcaecati explicabo doloremque iste consequatur accusantium, dignissimos debitis tenetur esse voluptate
+            animi quibusdam libero rerum repellendus dolorem vero, provident minima eligendi. Doloremque ullam illo
+            optio commodi eligendi laboriosam praesentium itaque provident, culpa reprehenderit totam ipsum, facilis
+            earum. Nemo iste iusto, mollitia obcaecati blanditiis quod nihil fuga delectus unde adipisci assumenda
+            officia.</p>
+
+    </div>
+    <ul class="fade-in-out">
+        <li><span>
+                <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit?</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatem, iure voluptate, corporis
+                    expedita maxime deleniti consequuntur consequatur voluptatibus incidunt dicta minus nesciunt nisi!
+                </p>
+            </span></li>
+        <li><span>
+                <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit?</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatem, iure voluptate, corporis
+                    expedita maxime deleniti consequuntur consequatur voluptatibus incidunt dicta minus nesciunt nisi!
+                </p>
+            </span></li>
+        <li><span>
+                <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit?</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatem, iure voluptate, corporis
+                    expedita maxime deleniti consequuntur consequatur voluptatibus incidunt dicta minus nesciunt nisi!
+                </p>
+            </span></li>
+        <li><span>
+                <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit?</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatem, iure voluptate, corporis
+                    expedita maxime deleniti consequuntur consequatur voluptatibus incidunt dicta minus nesciunt nisi!
+                </p>
+            </span></li>
+        <li><span>
+                <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit?</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatem, iure voluptate, corporis
+                    expedita maxime deleniti consequuntur consequatur voluptatibus incidunt dicta minus nesciunt nisi!
+                </p>
+            </span></li>
+
+
+    </ul>
+    <section id="gallery">
+        <div class="cards">
+            <div class="card fill-orange" data-card="0">
+                <h1>1</h1>
+
+            </div>
+            <div class="card fill-blue" data-card="1">
+                <h1>2</h1>
+            </div>
+            <div class="card fill-green" data-card="2">
+                <h1>3</h1>
+            </div>
+            <div class="card fill-purple" data-card="3">
+                <h1>4</h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-info" class="stagger">
+        <div class="box  hidden"></div>
+        <div class="box  hidden"></div>
+        <div class="box  hidden"></div>
+        <div class="box  hidden"></div>
+    </section>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.getElementById('header');
+
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            stars.style.left = value * 0.75 + 'px';
+            moon.style.top = value * 0.25 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+        addClass = function (el, cl) {
+            var re = new RegExp('(^|\\s)' + cl + '(\\s|$)');
+            if (!el.className.match(re)) el.className += " " + cl;
+        };
+
+        removeClass = function (el, cl) {
+            var re = new RegExp('(^|\\s)' + cl + '(\\s|$)');
+            if (el.className.match(re))
+                el.className = el.className.replace(re, ' ');
+        };
+
+        var scrollHi = function () {
+            [].forEach.call(document.querySelectorAll('.fade-in-out li'), function (el) {
+                var thisTop = (el.style.top || el.style.pixelTop || el.offsetTop || 0) - (window.pageXOffset ? window.pageYOffset : document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+                if (thisTop >= topLimit && (thisTop + (el.offsetHeight || el.clipHeight || 0)) <= bottomLimit) {
+                    addClass(el, 'highlight');
+                } else {
+                    removeClass(el, 'highlight');
+                }
+            });
+
+        };
+
+        var winHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
+            topLimit = winHeight * 0.15,
+            bottomLimit = winHeight * 0.85;
+
+        window.addEventListener('scroll', scrollHi, false);
+
+        /*
+     @method Cards
+     @description this is for label based radio navigation to change the labels style to 'active'
+    */
+        const Cards = ((() => {
+            /*
+             * @description dom loaded event listener
+             */
+            window.addEventListener('DOMContentLoaded', () => { setTimeout(init, 1) }, true);
+
+            /*
+             * @method init
+             * @parameter e {event}
+             * @description initiates event listeners on all cards
+             */
+            function init(e) {
+                if (document.querySelector(".cards")) {
+                    let cards = document.querySelector(".cards");
+                    cards.addEventListener('click', clicked, false);
+                    document.querySelectorAll(".cards .card")[1].click();
+                }
+            }
+
+            /*
+             * @method clicked
+             * @parameter e {event}
+             * @description this is the callback from the assigned event listener binding
+             */
+            function clicked(e) {
+                let card = e.target;
+                if (card.getAttribute("data-card")) { rearrange(card.getAttribute("data-card")); }
+            }
+
+            /*
+             * @method rearrange
+             * @parameter card {object}
+             * @description this is the callback from the assigned event listener binding
+             */
+            function rearrange(card) {
+                let cards = document.querySelectorAll(".cards .card");
+                for (let n = 0; n < cards.length; n++) {
+                    cards[n].classList.remove("card--left");
+                    cards[n].classList.remove("card--center");
+                    cards[n].classList.remove("card--right");
+                    cards[n].classList.remove("card--back");
+                }
+                cards[card].classList.add("card--center");
+                if (card == 0) {
+                    cards[3].classList.add("card--left");
+                    cards[1].classList.add("card--right");
+                    cards[2].classList.add("card--back");
+                }
+                if (card == 1) {
+                    cards[0].classList.add("card--left");
+                    cards[2].classList.add("card--right");
+                    cards[3].classList.add("card--back");
+                }
+                if (card == 2) {
+                    cards[1].classList.add("card--left");
+                    cards[3].classList.add("card--right");
+                    cards[0].classList.add("card--back");
+                }
+                if (card == 3) {
+                    cards[2].classList.add("card--left");
+                    cards[0].classList.add("card--right");
+                    cards[1].classList.add("card--back");
+                }
+
+            }
+
+            return {
+                init
+            }
+        })());
+// for contact-us info
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                console.log(entry)
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        });
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+</body>
+
+</html>

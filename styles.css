@@ -77,6 +77,69 @@ section img#five{
     z-index: 1000;
 }
 
+a {
+    position: relative;
+    padding: 20px 50px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 40px;
+    top: 50px;
+}
+a span{
+    position: relative;
+    color: rgb(0, 0, 0);
+    /* left: -4px; */
+    font-size: 19px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* letter-spacing: px; */
+    z-index: 2000;
+    font-weight: 700;
+}
+a .liquid{
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: #ffffff;
+    /* box-shadow: inset 0 0 50 rgba(0, 0, 0, 0); */
+    transition: 0.5s;
+}
+a .liquid::after,
+a .liquid::before{
+    content: '';
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: black;
+}
+a .liquid::before {
+    border-radius: 45%;
+    background: rgb(0, 0, 0);
+    animation: animate 5s linear infinite;
+}
+a .liquid::after{
+    border-radius: 40%;
+    background: rgba(20,20,20,0.5);
+    animation: animate 10s linear infinite;
+}
+a:hover .liquid{
+    top: -120px;
+}
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
 .sec {
     position: relative;
     padding: 100px;
@@ -105,75 +168,14 @@ section img#five{
     background: linear-gradient(to top, #1c0522, transparent);
     z-index: 1000;
 } */
-a {
-    position: relative;
-    padding: 20px 50px;
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: 200px;
-    overflow: hidden;
-    border-radius: 40px;
-    top: 50px;
-}
-a span{
-    position: relative;
-    color: #fff;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 8px;
-    z-index: 2000;
-    font-weight: 700;
-}
-a .liquid{
-    position: absolute;
-    top: -80px;
-    left: 0;
-    width: 200px;
-    height: 200px;
-    background: #a921c4;
-    /* box-shadow: inset 0 0 50 rgba(0, 0, 0, 0); */
-    transition: 0.5s;
-}
-a .liquid::after,
-a .liquid::before{
-    content: '';
-    width: 200%;
-    height: 200%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -75%);
-    background: black;
-}
-a .liquid::before {
-    border-radius: 45%;
-    background: rgba(20, 20, 20, 0.509);
-    animation: animate 5s linear infinite;
-}
-a .liquid::after{
-    border-radius: 40%;
-    background: rgba(20,20,20,0.5);
-    animation: animate 10s linear infinite;
-}
-a:hover .liquid{
-    top: -120px;
-}
-@keyframes animate {
-    0% {
-        transform: translate(-50%, -75%) rotate(0deg);
-    }
-    100%{
-        transform: translate(-50%, -75%) rotate(360deg);
-    }
-}
 .fade-in-out {
     margin: 0;
-    padding: 0;
+    padding: 0 10%;
     list-style: none;
     text-align: center;
     overflow-x: hidden;
     background-color: #1c0522;
+    
 }
 
 .fade-in-out span {
@@ -202,15 +204,17 @@ a:hover .liquid{
 }
 
 .fade-in-out h5 {
-    font-size: 30px;
-    text-decoration: underline;
+    font-size: 34px;
+    
     margin-bottom: 10px;
 }
 
 .fade-in-out p {
-    font-size: 24px;
+    font-size: 20px;
 }
-
+.n-5-element{
+    padding: 10px 100px;
+}
 /* gallery section */
 
 #gallery {
@@ -492,6 +496,7 @@ a:hover .liquid{
   box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
     cursor: pointer;
     transition: 0.4s;
+    border: 5px solid white;
     
   }
   
@@ -514,8 +519,11 @@ a:hover .liquid{
     font-family: sans-serif;
     font-weight: bold;
     font-size: 30px;
-    margin-top: -80px;
+    margin-top: -100px;
     height: 40px;
+  }
+  .head-card .card_title p{
+    font-size: 20px;
   }
   
   .head-card:hover {
@@ -536,6 +544,25 @@ a:hover .liquid{
     .card-list {
       /* On small screens, we are no longer using row direction but column */
       flex-direction: column;
+    }
+    .n-5-element{
+        padding: 0 20px;
+    }
+    .fade-in-out h5 {
+        font-size: 24px;
+        
+        margin-bottom: 10px;
+    }
+    
+    .fade-in-out p {
+        font-size: 15px;
+        max-height: 100px;
+        overflow-y: scroll;
+    }
+    .sec {
+        
+        padding: 50px;
+        
     }
   }
   

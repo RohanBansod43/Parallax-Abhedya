@@ -10,22 +10,21 @@
 </head>
 
 <body>
-    <header id="header">
-        <!-- <a href="#" class="logo">LOGO</a>
-        <ul>
-            <li><a class="active" href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul> -->
-    </header>
+    
     <section id="parallax">
-        <img src="stars.png" alt="*" id="stars">
-        <img src="moon.png" alt="*" id="moon">
-        <img src="mountains_behind.png" alt="*" id="mountains_behind">
-        <h2 id="text">Moon Light</h2>
-        <a href="#sec" id="btn">Explore</a>
-        <img src="mountains_front.png" alt="*" id="mountains_front">
+        <img src="0.png" alt="*" id="zero">
+        <img src="1.png" alt="*" id="one">
+        <img src="2.png" alt="*" id="two">
+        <img src="3.png" alt="*" id="three">
+        <img src="4.png" alt="*" id="four">
+        <img src="5.png" alt="*" id="five">
+        <div class="wave-button" id="wave-button">
+        
+            <a href="#sec">
+            <span>Button</span>
+            <div class="liquid"></div>
+            </a>    
+    </div>
     </section>
     <div class="sec" id="sec">
         <h2>About Us</h2>
@@ -89,33 +88,72 @@
         </div>
     </section>
 
-    <section id="contact-info" class="stagger">
+    <!-- <section id="contact-info" class="stagger">
         <div class="box  hidden"></div>
         <div class="box  hidden"></div>
         <div class="box  hidden"></div>
         <div class="box  hidden"></div>
-    </section>
-
+    </section> -->
+<!-- test section -->
+<div class="head-list">
+  
+    <div class="head-card 1">
+      <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
+      <div class="card_title title-white">
+        <p>Card Title</p>
+      </div>
+    </div>
+    
+      <div class="head-card 2">
+      <div class="card_image">
+        <img src="https://cdn.blackmilkclothing.com/media/wysiwyg/Wallpapers/PhoneWallpapers_FloralCoral.jpg" />
+        </div>
+      <div class="card_title title-white">
+        <p>Card Title</p>
+      </div>
+    </div>
+    
+    <div class="head-card 3">
+      <div class="card_image">
+        <img src="https://media.giphy.com/media/10SvWCbt1ytWCc/giphy.gif" />
+      </div>
+      <div class="card_title">
+        <p>Card Title</p>
+      </div>
+    </div>
+      
+      <div class="head-card 4">
+      <div class="card_image">
+        <img src="https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif" />
+        </div>
+      <div class="card_title title-black">
+        <p>Card Title</p>
+      </div>
+      </div>
+    
+    </div>
     <script>
-        let stars = document.getElementById('stars');
-        let moon = document.getElementById('moon');
-        let mountains_behind = document.getElementById('mountains_behind');
-        let text = document.getElementById('text');
-        let btn = document.getElementById('btn');
-        let mountains_front = document.getElementById('mountains_front');
-        let header = document.getElementById('header');
-
+        let zero = document.getElementById('zero');
+        let one = document.getElementById('one');
+        let two = document.getElementById('two');
+        let three = document.getElementById('three');
+        let four = document.getElementById('four');
+        let five = document.getElementById('five');
+        let sec = document.getElementById('wave-button')
         window.addEventListener('scroll', function () {
             let value = window.scrollY;
-            stars.style.left = value * 0.75 + 'px';
-            moon.style.top = value * 0.25 + 'px';
-            mountains_behind.style.top = value * 0.5 + 'px';
-            mountains_front.style.top = value * 0 + 'px';
-            text.style.marginRight = value * 4 + 'px';
-            text.style.marginTop = value * 1.5 + 'px';
-            btn.style.marginTop = value * 1.5 + 'px';
-            header.style.top = value * 0.5 + 'px';
-        })
+            zero.style.top = value * 0.1 + 'px'
+            zero.style.left = value * 0.7 + 'px'
+            one.style.top = value * 0.40 + 'px'
+            one.style.left = value * -0.7 + 'px'
+            two.style.top = value * 0.60 + 'px'
+            two.style.left = value * 0.75 + 'px'
+            three.style.top = value * 0.70 + 'px'
+            three.style.left = value * -0.80 + 'px'
+            four.style.top = value * 0.80 + 'px'
+            four.style.left = value * 0.95 + 'px'
+            sec.style.top = value * 0.60 + 'px'
+ })
         addClass = function (el, cl) {
             var re = new RegExp('(^|\\s)' + cl + '(\\s|$)');
             if (!el.className.match(re)) el.className += " " + cl;
@@ -150,16 +188,9 @@
      @description this is for label based radio navigation to change the labels style to 'active'
     */
         const Cards = ((() => {
-            /*
-             * @description dom loaded event listener
-             */
+          
             window.addEventListener('DOMContentLoaded', () => { setTimeout(init, 1) }, true);
 
-            /*
-             * @method init
-             * @parameter e {event}
-             * @description initiates event listeners on all cards
-             */
             function init(e) {
                 if (document.querySelector(".cards")) {
                     let cards = document.querySelector(".cards");
@@ -167,22 +198,11 @@
                     document.querySelectorAll(".cards .card")[1].click();
                 }
             }
-
-            /*
-             * @method clicked
-             * @parameter e {event}
-             * @description this is the callback from the assigned event listener binding
-             */
             function clicked(e) {
                 let card = e.target;
                 if (card.getAttribute("data-card")) { rearrange(card.getAttribute("data-card")); }
             }
 
-            /*
-             * @method rearrange
-             * @parameter card {object}
-             * @description this is the callback from the assigned event listener binding
-             */
             function rearrange(card) {
                 let cards = document.querySelectorAll(".cards .card");
                 for (let n = 0; n < cards.length; n++) {

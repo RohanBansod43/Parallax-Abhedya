@@ -10,63 +10,18 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(#2b1055, #7597de);
+    /* background: linear-gradient(#2b1055, #7597de); */
     overflow-x: hidden;
 
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 100px;
-    z-index: 10000;
-}
 
-header .logo {
-    text-decoration: none;
-    color: #fff;
-    font-size: 2em;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-header ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-header>ul>li {
-    list-style: none;
-    margin-left: 20px;
-}
-
-header>ul>li>a {
-
-    text-decoration: none;
-    color: #fff;
-    padding: 6px 15px;
-    border-radius: 20px;
-}
-
-header ul li a:hover,
-header ul li a.active {
-    background: white;
-    color: #2b1055;
-}
 
 section {
     position: relative;
     width: 100%;
     height: 100vh;
-    padding: 100px;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,42 +32,49 @@ section img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: initial;
+    height: 100vh;
+    object-fit: fill;
     pointer-events: none;
+    filter: drop-shadow(0px, 20px, 10px, black );
+    transform: scaleX(2);
+    
 }
 
-section img#moon {
-    mix-blend-mode: screen;
+
+section img#zero{
+    z-index: 2000;
+    transform: translateX(-100px) scaleX(2);
+    
+
 }
-
-section img#mountains_front {
-    z-index: 10;
+section img#one{
+    z-index: 500;
+    
 }
-
-#text {
-    position: absolute;
-    font-size: 7em;
-    margin-bottom: 30px;
-    color: #fff;
-    z-index: 9;
-    white-space: nowrap;
-    font-weight: 900;
-    transform: translateX(560px);
+section img#two{
+    z-index: 400;
 }
-
-#btn {
-    text-decoration: none;
-    border-radius: 40px;
-    background: #fff;
-    color: #2b1055;
-    padding: 8px 30px;
-    font-size: 1.5em;
-    border: 2px solid #fff;
-    z-index: 9;
-    transform: translateY(100px);
-
+section img#three{
+    z-index: 300;
+    transform: translateX(100px) scaleX(2);
+}
+section img#four{
+    z-index: 200;
+    
+}
+section img#five{
+    z-index: 100;
+}
+.wave-button {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    z-index: 1000;
 }
 
 .sec {
@@ -134,7 +96,7 @@ section img#mountains_front {
     color: #fff;
 }
 
-section::before {
+/* section::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -142,8 +104,69 @@ section::before {
     height: 100px;
     background: linear-gradient(to top, #1c0522, transparent);
     z-index: 1000;
+} */
+a {
+    position: relative;
+    padding: 20px 50px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 40px;
+    top: 50px;
 }
-
+a span{
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 8px;
+    z-index: 2000;
+    font-weight: 700;
+}
+a .liquid{
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: #a921c4;
+    /* box-shadow: inset 0 0 50 rgba(0, 0, 0, 0); */
+    transition: 0.5s;
+}
+a .liquid::after,
+a .liquid::before{
+    content: '';
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: black;
+}
+a .liquid::before {
+    border-radius: 45%;
+    background: rgba(20, 20, 20, 0.509);
+    animation: animate 5s linear infinite;
+}
+a .liquid::after{
+    border-radius: 40%;
+    background: rgba(20,20,20,0.5);
+    animation: animate 10s linear infinite;
+}
+a:hover .liquid{
+    top: -120px;
+}
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
 .fade-in-out {
     margin: 0;
     padding: 0;
@@ -198,7 +221,7 @@ section::before {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to bottom, #1c0522, #0c121f);
+    background-image: linear-gradient(to bottom, #1c0522, #000000);
     font-family: Helvetica;
 }
 
@@ -446,4 +469,89 @@ section::before {
     .card__icon:before {
         transform: scale(0.75);
     }
+    /* for contact us section */
+    
 }
+/* test section */
+
+.head-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  /*   flex-direction: column; */
+  background-color: black;
+  }
+  
+  .head-card {
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+    
+  }
+  
+  .head-card .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+  }
+  
+  .head-card .card_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+    object-fit: cover;
+  }
+  
+  .head-card .card_title {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -80px;
+    height: 40px;
+  }
+  
+  .head-card:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+      -5px -5px 30px 15px rgba(0,0,0,0.22);
+  }
+  
+  .title-white {
+    color: white;
+  }
+  
+  .title-black {
+    color: black;
+  }
+  
+  @media all and (max-width: 500px) {
+    .card-list {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+  }
+  
+  
+  /*
+  .card {
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    transition: 0.4s;
+  }
+  */

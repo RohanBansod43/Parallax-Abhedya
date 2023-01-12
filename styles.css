@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,800;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,800&family=Quicksand&family=Roboto:wght@300&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -44,7 +43,7 @@ section img {
 
 
 section img#zero{
-    z-index: 2000;
+    z-index: 4000;
     transform: translateX(-100px) scaleX(2);
     
 
@@ -68,105 +67,88 @@ section img#five{
     z-index: 100;
 }
 section .abhedya_container{
-    font-size: 100px;
-    z-index: 350;
+    /* font-size: 100px; */
+    z-index: 3500;
     color: white;
-    margin-top: -250px;
+    margin-top: -150px;
     position: relative;
     top: 0;
+    text-align: center;
 }
-.wave-button {
-    display: flex;
-    position: absolute;
-    top: 0;
-    /* left: 0; */
-    align-items: center;
-    /* justify-content: center; */
-    min-height: 100vh;
-    z-index: 1000;
+section .abhedya_container h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    margin-bottom: 50px ;
+    text-shadow: 7px 4px 4px black;
+}
+section .abhedya_container p{
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 30px;
+    font-size: 35px;
+    font-weight: 600;
+}
+.btn {
+    padding: 1em 2.1em 1.1em;
+    border-radius: 3px;
+    margin: 8px 8px 8px 8px;
+    color: #fbdedb;
+    background-color: #fbdedb;
+    display: inline-block;
+    background: #e74c3c;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: .85em;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+    color: black;
+    background-color: #d2d2d2;
+    position: relative;
+}
+.btn:hover, .btn:focus {
+    opacity: 0.8;
+}
+.btn:active {
+    -webkit-transform: scale(0.80);
+    -moz-transform: scale(0.80);
+    -ms-transform: scale(0.80);
+    -o-transform: scale(0.80);
+    transform: scale(0.80);
+}
+.btn.block {
+    display: block !important;
+}
+.btn.circular {
+  border-radius: 50em !important;
 }
 
-a {
-    position: relative;
-    padding: 20px 50px;
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: 200px;
-    overflow: hidden;
-    border-radius: 40px;
-    top: 50px;
-}
-a span{
-    position: relative;
-    color: black;
-    /* left: -4px; */
-    top: 4px;
-    font-size: 19px;
-    font-family: Arial, Helvetica, sans-serif;
-    /* letter-spacing: px; */
-    z-index: 2000;
-    font-weight: 700;
-}
-a .liquid{
-    position: absolute;
-    top: -80px;
-    left: 0;
-    width: 200px;
-    height: 200px;
-    background: #FFFFFF;
-    /* box-shadow: inset 0 0 50 rgba(0, 0, 0, 0); */
-    transition: 0.5s;
-}
-a .liquid::after,
-a .liquid::before{
-    content: '';
-    width: 200%;
-    height: 200%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -75%);
-    background: black;
-}
-a .liquid::before {
-    border-radius: 45%;
-    background: rgb(0, 0, 0);
-    animation: animate-button 5s linear infinite;
-}
-a .liquid::after{
-    border-radius: 40%;
-    background: rgba(20,20,20,0.5);
-    animation: animate-button 10s linear infinite;
-}
-a:hover .liquid{
-    top: -120px;
-}
-@keyframes animate-button {
-    0% {
-        transform: translate(-50%, -75%) rotate(0deg);
-    }
-    100%{
-        transform: translate(-50%, -75%) rotate(360deg);
-    }
-}
+
 .sec {
     position: relative;
     padding: 100px;
     background: #1c0522;
     text-align: center;
+    
 }
 
 .sec h2 {
     font-size: 3.5em;
     margin-bottom: 10px;
     color: #fff;
-
+    font-family: 'Quicksand', sans-serif;
 }
 
 .sec p {
     font-size: 1em;
     color: #fff;
+    font-family: 'Roboto', sans-serif;
 }
 #top_defence{
     z-index: 250;
@@ -301,12 +283,13 @@ a:hover .liquid{
 
 .fade-in-out h5 {
     font-size: 34px;
-    
-    margin-bottom: 10px;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 15px;
 }
 
 .fade-in-out p {
-    font-size: 20px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
 }
 .n-5-element{
     padding: 10px 100px;

@@ -31,12 +31,11 @@ section img {
     position: absolute;
     top: 0;
     left: 0;
-    width: initial;
+    width: fit-content;
     height: 100vh;
     object-fit: fill;
     pointer-events: none;
-    filter: drop-shadow(0px, 20px, 10px, black );
-    transform: scaleX(2);
+    /* transform: scaleX(2); */
     /* -webkit-filter: drop-shadow(-2px -2px 50px #000000a5);
     filter: drop-shadow(-2px -2px 50px #000000a5); */
 }
@@ -50,21 +49,23 @@ section img#zero{
 }
 section img#one{
     z-index: 500;
-    
+    transform: translateX(2px) scaleX(2);
 }
 section img#two{
     z-index: 400;
+    transform: translateX(2px) scaleX(2);
 }
 section img#three{
     z-index: 300;
-    transform: translateX(100px) scaleX(2);
+    transform: translateX(490px) scaleX(2);
 }
 section img#four{
     z-index: 200;
-    
+    transform: translateX(2px) scaleX(2);
 }
 section img#five{
     z-index: 100;
+    transform: translateX(2px) scaleX(2);
 }
 section .abhedya_container{
     /* font-size: 100px; */
@@ -76,16 +77,16 @@ section .abhedya_container{
     text-align: center;
 }
 section .abhedya_container h1{
-    font-family: 'Righteous', cursive;
+    font-family: 'Righteous', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     /* font-family: 'Playfair Display', serif; */
-    font-size: 120px;
-    margin-bottom: 50px ;
+    font-size: 160px;
+    margin-bottom: 60px ;
     text-shadow: 7px 4px 4px black;
 }
 section .abhedya_container p{
     font-family: 'Quicksand', sans-serif;
-    margin-bottom: 30px;
-    font-size: 35px;
+    margin-bottom: 50px;
+    font-size: 45px;
     font-weight: 600;
 }
 button{
@@ -108,7 +109,9 @@ button{
     color: #ffffff;
     box-shadow: inset 0 0 0 2px #ffffff;
     background-color: transparent;
-    height: 48px;}
+    height: 48px;
+    transform: scale(1.5);
+}
 .btn:hover{
         color: rgb(0, 0, 0);
         background-color: #ffffff;
@@ -139,7 +142,7 @@ button{
 }
 
 .sec p {
-    font-size: 1em;
+    font-size: 1.5em;
     color: #fff;
     font-family: 'Roboto', sans-serif;
 }
@@ -147,7 +150,7 @@ button{
     z-index: 250;
     position: absolute;
     /* top: -128px; */
-    left: 70%;
+    left: 593px;
     /* height: 600px;
     width: 800px; */
     -webkit-filter: drop-shadow(2px 4px 5px #000000a5);
@@ -158,7 +161,7 @@ button{
     z-index: 350;
     position: absolute;
     /* top: 115px; */
-    left: -647px;
+    /* left: -647px; */
     /* height: 600px;
     width: 800px; */
     -webkit-filter: drop-shadow(2px 4px 5px #000000a5);
@@ -180,36 +183,36 @@ button{
   
   @keyframes float-top {
     0% {
-      transform: translate(0px, -140px) scale(1,1);
+      transform: translate(0px, 0px) scale(1,1);
     }
     25% {
-      transform: translate(10px, -140px) scale(1,1);
+      transform: translate(10px, 0px) scale(1,1);
     }
     50% {
-      transform: translate(10px, -120px) scale(1,1);
+      transform: translate(10px, -10px) scale(1,1);
     }
     75% {
-      transform: translate(0px, -120px) scale(1,1);
+      transform: translate(0px, -10px) scale(1,1);
     }
     100% {
-      transform: translate(0px, -140px) scale(1,1);
+      transform: translate(0px, 0px) scale(1,1);
     }
   }
   @keyframes float-medium {
     0% {
-      transform: translate(0px, 110px) scale(1,1);
+      transform: translate(100px, 10px) scale(1,1);
     }
     25% {
-      transform: translate(0px, 100px) scale(1,1);
+      transform: translate(100px, 0px) scale(1,1);
     }
     50% {
-      transform: translate(10px, 100px) scale(1,1);
+      transform: translate(90px, 0px) scale(1,1);
     }
     75% {
-      transform: translate(10px, 110px) scale(1,1);
+      transform: translate(90px, 10px) scale(1,1);
     }
     100% {
-      transform: translate(0px, 110px) scale(1,1);
+      transform: translate(100px, 10px) scale(1,1);
     }
   }
   @keyframes float-bottom {
@@ -597,6 +600,9 @@ ul li:nth-child(3){
     .n-5-element{
         padding: 0 20px;
     }
+    .fade-in-out li span{
+        margin-bottom: 40px;
+    }
     .fade-in-out h5 {
         font-size: 24px;
         
@@ -604,10 +610,11 @@ ul li:nth-child(3){
     }
     
     .fade-in-out p {
-        font-size: 15px;
-        max-height: 100px;
+        font-size: 20px;
+        max-height: 150px;
         overflow-y: scroll;
         padding:0 10px ;
+
         border-left: 2px solid white;
         border-right: 2px solid white;
     }
@@ -622,6 +629,7 @@ section .abhedya_container h1{
 section .abhedya_container p{
     font-size: 30px;
 }
+
     
     #top_defence, #medium_defence, #bottom_defence{
         display: none;
@@ -629,6 +637,9 @@ section .abhedya_container p{
     section img#three{
         z-index: 300;
         transform: translateX(300px) scaleX(2);
+    }
+    button{
+        transform: scale(1.3);
     }
   }
  
